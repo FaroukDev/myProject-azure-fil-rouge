@@ -23,7 +23,7 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- script: cd myProject-azure-fil-rouge && npm --version
+- script: cd authentification && npm --version
   workingDirectory: '$(Build.SourcesDirectory)/authentification'
   displayName: 'npm install and npm run build'
 - task: Bash@3

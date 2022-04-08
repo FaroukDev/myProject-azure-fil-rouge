@@ -24,7 +24,9 @@ steps:
   displayName: 'Install Node.js'
 
 
-
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
 - script:
   displayName: 'npm install and npm run build'
   workingDirectory: '$(Build.SourcesDirectory)/authentification'

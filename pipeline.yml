@@ -2,6 +2,9 @@
 # Build a Node.js project that uses React.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+#variables:
+ # uiSource : 'authentification'
+#uiBuild : $(uiSource)/build
 
 trigger:
 - dev
@@ -21,7 +24,47 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    cd client && npm --version
-  displayName: 'npm install and build'
+    cd authentification && npm --version
+  displayName: 'npm install and npm run build'
+#- task: Bash@3
+#  inputs:
+#    targetType: 'inline'
+#    script: |
+#      echo '--------------cd-------------'
+#      ls
+#      echo '--------------Build.BinariesDirectory-------------'
+#      echo $(Build.BinariesDirectory)
+#      ls
+#      cd authentification
+#      echo 'inside authentification'
+#      ls
+#      cd build
+#      echo 'inside build'
+#      ls
+
+#      echo '--------------Build.SourcesDirectory-------------'
+#      echo $(Build.SourcesDirectory)
+#      ls
+#      cd authentification
+#      echo 'inside authentification------'
+#      ls
+#      echo 'inside build'
+#      cd build
+#      echo '--------------Build.ArtifactStagingDirectory-------------'
+#      echo $(Build.ArtifactStagingDirectory)
+#      ls
+#      cd authentification
+#      echo 'inside authentification'
+#      ls   
+#- task: ArchiveFiles@2
+#  inputs:
+#    rootFolderOrFile: '$(uiBuild)'
+#    includeRootFolder: false
+#    archiveType: 'zip'
+#    archiveFile: '$(Build.ArtifactStagingDirectory)/authentification/build/$(Build.BuildId).zip'
+#    replaceExistingArchive: true
+#- task: PublishBuildArtifacts@1
+#  inputs:
+#      PathtoPublish: '$(Build.ArtifactStagingDirectory)/authentification/build'
 
 

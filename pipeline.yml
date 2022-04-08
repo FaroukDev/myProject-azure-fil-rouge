@@ -24,8 +24,14 @@ steps:
   displayName: 'Install Node.js'
 
 - script: 
-  workingDirectory: '$(Build.SourcesDirectory)/myProject-azure-fil-rouge/authentification'
-  displayName: 'npm install and npm run build'
+    echo '-----------cd--------------'
+    ls -ltr
+    cd myProject-azure-fil-rouge
+    echo 'inside myProject-azure-fil-rouge'
+
+#- script: 
+#  workingDirectory: '$(Build.SourcesDirectory)/myProject-azure-fil-rouge/authentification'
+#  displayName: 'npm install and npm run build'
 - task: Bash@3
   inputs:
     targetType: 'inline'

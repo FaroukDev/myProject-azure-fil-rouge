@@ -24,7 +24,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: cd authentification && npm --version
-  workingDirectory: '$(Build.SourcesDirectory)/authentification'
+  workingDirectory: '$(Build.SourcesDirectory)/myProject-azure-fil-rouge/authentification'
   displayName: 'npm install and npm run build'
 - task: Bash@3
   inputs:

@@ -60,10 +60,10 @@ steps:
     rootFolderOrFile: '$(uiBuild)'
     includeRootFolder: false
     archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/authentification/build/$(Build.BuildId).zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/authentification/$(Build.BuildId).zip'
     replaceExistingArchive: true
 - task: PublishBuildArtifacts@1
   inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)/authentification/build'
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/authentification'
 
 

@@ -23,8 +23,8 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- script: |
-    cd authentification && npm --version
+- script: cd authentification && npm --version
+  workingDirectory: '$(Build.SourcesDirectory)/authentification'
   displayName: 'npm install and npm run build'
 - task: Bash@3
   inputs:
@@ -55,15 +55,16 @@ steps:
       cd authentification
       echo 'inside authentification'
       ls
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(uiBuild)'
-    includeRootFolder: false
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/authentification/$(Build.BuildId).zip'
-    replaceExistingArchive: true
-- task: PublishBuildArtifacts@1
-  inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)/authentification'
+
+#- task: ArchiveFiles@2
+#  inputs:
+#    rootFolderOrFile: '$(uiBuild)'
+#    includeRootFolder: false
+#    archiveType: 'zip'
+#    archiveFile: '$(Build.ArtifactStagingDirectory)/authentification/$(Build.BuildId).zip'
+#    replaceExistingArchive: true
+#- task: PublishBuildArtifacts@1
+#  inputs:
+#      PathtoPublish: '$(Build.ArtifactStagingDirectory)/authentification'
 
 

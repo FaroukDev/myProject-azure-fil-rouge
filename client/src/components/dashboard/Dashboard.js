@@ -10,7 +10,6 @@ import makeStyles from "../../styles";
 function Home() {
   const classes = makeStyles();
 
-  
   return (
     <>
       <div className="container mt-4">
@@ -18,9 +17,10 @@ function Home() {
           <h4>Home Auth</h4>
           <ul>
             <li>
-              <Link to="/"><a href="home">Home</a></Link>
+              <Link to="/">
+                <a href="home">Home</a>
+              </Link>
             </li>
-            
           </ul>
         </nav>
       </div>

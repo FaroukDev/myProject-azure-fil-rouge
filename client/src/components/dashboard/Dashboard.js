@@ -14,7 +14,7 @@ function Home() {
     <>
       <div className="container mt-4">
         <nav>
-          <h4>Home Auth</h4>
+          <h4>Home</h4>
           <ul>
             <li>
               <Link to="/">

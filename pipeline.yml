@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 variables:
   uiSource : 'authentification'
-  uiBuild : $(uiSource)/build
+  uiBuild : $(uiSource)/authentification
 
 trigger:
 - dev
@@ -23,9 +23,20 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- script: |
-    cd authentification && npm --version
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+- script:
   displayName: 'npm install and npm run build'
+  workingDirectory: '$(Build.SourcesDirectory)/authentification'
+  
+- script: 
+    echo '-----------cd--------------'
+    ls -ltr
+    cd myProject-azure-fil-rouge
+    echo 'inside myProject-azure-fil-rouge'
+  
 - task: Bash@3
   inputs:
     targetType: 'inline'
@@ -38,23 +49,18 @@ steps:
       cd authentification
       echo 'inside authentification'
       ls
-      cd build
-      echo 'inside build'
-      ls
       echo '--------------Build.SourcesDirectory-------------'
       echo $(Build.SourcesDirectory)
       ls
       cd authentification
       echo 'inside authentification------'
       ls
-      echo 'inside build'
-      cd build
-      echo '--------------Build.ArtifactStagingDirectory-------------'
       echo $(Build.ArtifactStagingDirectory)
       ls
       cd authentification
       echo 'inside authentification'
       ls
+
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(uiBuild)'

@@ -35,7 +35,7 @@ export default function ShowStudent() {
         <Typography className={classes.heading} variant="h4" align="center">
           All students
         </Typography>
-        
+
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
           <TableHead>
             <TableRow>

@@ -11,10 +11,19 @@ function Home() {
   const [authState, setAuthState] = useState(false);
   let history = useNavigate();
 
+  const myHeaders = {};
+  const myInit = {
+    method: "GET",
+    headers: myHeaders,
+    credentials: "include",
+  };
+
   useEffect(() => {
-    axios.get("https://server-app-back-farouk.azurewebsites.net:443/students").then((response) => {
-      setlistOfStudents(response.data);
-    });
+    axios
+      .get("https://server-app-back-farouk.azurewebsites.net:443/students", myInit)
+      .then((response) => {
+        setlistOfStudents(response.data);
+      });
   }, []);
 
   useEffect(() => {

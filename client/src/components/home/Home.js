@@ -13,14 +13,14 @@ function Home() {
   
 
   useEffect(() => {
-    axios.get("https://authentification-app-back-farouk.azurewebsites.net:443/students").then((response) => {
+    axios.get("https://authentification-app-back-farouk.azurewebsites.net:80/students").then((response) => {
       setlistOfStudents(response.data);
     });
   }, []);
 
   useEffect(() => {
     axios
-      .get("https://authentification-app-back-farouk.azurewebsites.net:443/auth/auth", {
+      .get("https://authentification-app-back-farouk.azurewebsites.net:80/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },

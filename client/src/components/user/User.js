@@ -21,7 +21,7 @@ function User() {
   }, []);
 
   const addComment = () => {
-    axios.post("https://authentification-app-back-farouk.azurewebsites.net:443/comments", {
+    axios.post("https://authentification-app-back-farouk.azurewebsites.net:80/comments", {
       commentBody: newComment,
       StudentId: id,
     },

@@ -10,21 +10,27 @@ function Home() {
   const [listOfStudents, setlistOfStudents] = useState([]);
   const [authState, setAuthState] = useState(false);
   let history = useNavigate();
-  
 
   useEffect(() => {
-    axios.get("https://authentification-app-back-farouk.azurewebsites.net:80/students").then((response) => {
-      setlistOfStudents(response.data);
-    });
+    axios
+      .get(
+        "https://authentification-app-back-farouk.azurewebsites.net:80/students"
+      )
+      .then((response) => {
+        setlistOfStudents(response.data);
+      });
   }, []);
 
   useEffect(() => {
     axios
-      .get("https://authentification-app-back-farouk.azurewebsites.net:80/auth/auth", {
-        headers: {
-          accessToken: localStorage.getItem("accessToken"),
-        },
-      })
+      .get(
+        "https://authentification-app-back-farouk.azurewebsites.net:80/auth/auth",
+        {
+          headers: {
+            accessToken: localStorage.getItem("accessToken"),
+          },
+        }
+      )
       .then((response) => {
         if (response.data.error) {
           setAuthState(false);

@@ -24,7 +24,7 @@ function CreatePost() {
   
 
   const onSubmit = (data) => {
-    axios.post("http://127.0.0.1:5001/students", data).then((response) => {
+    axios.post("http://localhost:5001/students", data).then((response) => {
       history("/");
     });
   }

@@ -12,25 +12,17 @@ function Home() {
   let history = useNavigate();
 
   useEffect(() => {
-    axios
-      .get(
-        "http://127.0.0.1:5001/students"
-      )
-      .then((response) => {
-        setlistOfStudents(response.data);
-      });
+    axios.get("http://localhost:5001/students").then((response) => {
+      setlistOfStudents(response.data);
+    });
   }, []);
 
   useEffect(() => {
-    axios
-      .get(
-        "http://127.0.0.1:5001/auth/auth",
-        {
-          headers: {
-            accessToken: localStorage.getItem("accessToken"),
-          },
-        }
-      )
+    axios.get("http://localhost:5001/auth/auth", {
+        headers: {
+          accessToken: localStorage.getItem("accessToken"),
+        },
+      })
       .then((response) => {
         if (response.data.error) {
           setAuthState(false);

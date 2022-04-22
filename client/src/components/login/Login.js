@@ -23,7 +23,7 @@ function Login() {
 
   const login = () => {
     const data = { name: name, password: password };
-    axios.post("http://127.0.0.1:5001/auth/login", data).then((response) => {
+    axios.post("http://localhost:5001/auth/login", data).then((response) => {
       if(response.data.error){
         alert(response.data.error);
       }else if(name === "admin3" ){

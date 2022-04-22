@@ -19,6 +19,7 @@ router.post("/", async (req, res) => {
   await db.Students.create(post);
 
   res.json(post);
+  res.sendStatus(200);
 });
 
 module.exports = router;

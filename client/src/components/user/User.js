@@ -11,17 +11,17 @@ function User() {
   
 
   useEffect(() => {
-    axios.get(`http://localhost:5001/students/byid/${id}`).then((response) => {
+    axios.get(`http://127.0.0.1:51007/byid/${id}`).then((response) => {
       setSudentObject(response.data);
     });
 
-    axios.get(`http://localhost:5001/comments/${id}`).then((response) => {
+    axios.get(`http://127.0.0.1:51007/comments/${id}`).then((response) => {
       setComments(response.data);
     });
   }, []);
 
   const addComment = () => {
-    axios.post("http://localhost:5001/comments", {
+    axios.post("http://127.0.0.1:51007/comments", {
       commentBody: newComment,
       StudentId: id,
     },

@@ -2,20 +2,20 @@ module.exports = (sequelize, DataTypes) => {
     const Students = sequelize.define("Students", {
         name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
 
 
         },
 
         description: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
 
 
         },
         grade: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
 
 
         },

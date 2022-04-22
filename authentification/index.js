@@ -21,7 +21,7 @@ const usersRouter = require("./routes/Users.js");
 app.use("/auth", usersRouter);
 
 db.sequelize.sync().then(() => {
-  app.listen(443, () => {
-    console.log("Server running on port 443");
+  app.listen(80, () => {
+    console.log("Server running on port 80");
   });
 });

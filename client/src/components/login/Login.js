@@ -23,7 +23,7 @@ function Login() {
 
   const login = () => {
     const data = { name: name, password: password };
-    axios.post("https://authentification-app-back-farouk.azurewebsites.net:80/auth/login", data).then((response) => {
+    axios.post("http://127.0.0.1:80/auth/login", data).then((response) => {
       if(response.data.error){
         alert(response.data.error);
       }else if(name === "admin3" ){

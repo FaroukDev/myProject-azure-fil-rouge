@@ -24,7 +24,7 @@ function CreatePost() {
   
 
   const onSubmit = (data) => {
-    axios.post("https://authentification-app-back-farouk.azurewebsites.net:80/students", data).then((response) => {
+    axios.post("http://127.0.0.1:80/students", data).then((response) => {
       history("/");
     });
   }

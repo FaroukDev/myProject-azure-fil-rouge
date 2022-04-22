@@ -14,7 +14,7 @@ function Home() {
   useEffect(() => {
     axios
       .get(
-        "https://authentification-app-back-farouk.azurewebsites.net:80/students"
+        "http://127.0.0.1:80/students"
       )
       .then((response) => {
         setlistOfStudents(response.data);
@@ -24,7 +24,7 @@ function Home() {
   useEffect(() => {
     axios
       .get(
-        "https://authentification-app-back-farouk.azurewebsites.net:80/auth/auth",
+        "http://127.0.0.1:80/auth/auth",
         {
           headers: {
             accessToken: localStorage.getItem("accessToken"),

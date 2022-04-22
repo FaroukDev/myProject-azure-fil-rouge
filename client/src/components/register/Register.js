@@ -21,7 +21,7 @@ function register() {
   });
 
   const onSubmit = (data) => {
-    axios.post("https://authentification-app-back-farouk.azurewebsites.net:80/auth", data).then(() => {
+    axios.post("http://127.0.0.1:80/auth", data).then(() => {
       console.log(data);
     })
   };

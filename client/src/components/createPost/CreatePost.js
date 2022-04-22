@@ -24,7 +24,7 @@ function CreatePost() {
   
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:5001/students", data).then((response) => {
+    axios.post("https://server-app-back-farouk.azurewebsites.net:80/students", data).then((response) => {
       history("/");
     });
   }

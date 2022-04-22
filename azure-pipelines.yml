@@ -1,0 +1,75 @@
+# Node.js with React
+# Build a Node.js project that uses React.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+variables:
+  uiSource : 'server'
+  uiBuild : $(uiSource)/build
+
+trigger:
+- dev
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'ls'
+
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    cd server && npm --version
+    npm install
+  displayName: 'npm install and npm run build'
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo '--------------cd-------------'
+      echo pwd
+      pwd
+      ls
+      echo '--------------Build.BinariesDirectory-------------'
+      echo $(Build.BinariesDirectory)
+      ls
+      cd server
+      echo 'inside server'
+      ls
+      cd build
+      echo 'inside build'
+      ls
+
+      echo '--------------Build.SourcesDirectory-------------'
+      echo $(Build.SourcesDirectory)
+      ls
+      cd server
+      echo 'inside server------'
+      ls
+      echo 'inside build'
+      cd build
+      echo '--------------Build.ArtifactStagingDirectory-------------'
+      echo $(Build.ArtifactStagingDirectory)
+      ls
+      cd server
+      echo 'inside server'
+      ls   
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(uiSource)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/server/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/server/'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
+

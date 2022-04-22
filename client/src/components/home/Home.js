@@ -12,14 +12,14 @@ function Home() {
   let history = useNavigate();
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:80/students").then((response) => {
+    axios.get("http://react-front-webapp-pipeline.azurewebsites.net:80/students").then((response) => {
       setlistOfStudents(response.data);
     });
   }, []);
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:80/auth/auth", {
+      .get("http://react-front-webapp-pipeline.azurewebsites.net:80/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },

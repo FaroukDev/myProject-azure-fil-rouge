@@ -13,7 +13,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("https://server-app-back-farouk.azurewebsites.net:80/students")
+      .get("https://server-app-back-farouk.azurewebsites.net:443/students")
       .then((response) => {
         setlistOfStudents(response.data);
       });
@@ -21,7 +21,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("https://server-app-back-farouk.azurewebsites.net:80/auth/auth", {
+      .get("https://server-app-back-farouk.azurewebsites.net:443/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },

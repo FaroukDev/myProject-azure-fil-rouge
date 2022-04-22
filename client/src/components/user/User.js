@@ -11,17 +11,17 @@ function User() {
   
 
   useEffect(() => {
-    axios.get(`http://react-front-webapp-pipeline.azurewebsites.net:80/byid/${id}`).then((response) => {
+    axios.get(`https://server-app-back-farouk.azurewebsites.net:80/byid/${id}`).then((response) => {
       setSudentObject(response.data);
     });
 
-    axios.get(`http://react-front-webapp-pipeline.azurewebsites.net:80/comments/${id}`).then((response) => {
+    axios.get(`https://server-app-back-farouk.azurewebsites.net:80/comments/${id}`).then((response) => {
       setComments(response.data);
     });
   }, []);
 
   const addComment = () => {
-    axios.post("http://react-front-webapp-pipeline.azurewebsites.net:80/comments", {
+    axios.post("https://server-app-back-farouk.azurewebsites.net:80/comments", {
       commentBody: newComment,
       StudentId: id,
     },

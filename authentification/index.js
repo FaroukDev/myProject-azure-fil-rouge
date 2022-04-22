@@ -6,7 +6,9 @@ app.use(express.json());
 const db = require("./models/index.js");
 const cors = require("cors");
 
-app.use(cors());
+app.use(cors({
+  origin: '*'
+}));
 
 //Routers
 const postRouter = require("./routes/Students.js");

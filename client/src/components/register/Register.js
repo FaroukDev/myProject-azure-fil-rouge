@@ -21,7 +21,7 @@ function register() {
   });
 
   const onSubmit = (data) => {
-    axios.post("http://react-front-webapp-pipeline.azurewebsites.net:80/auth", data).then(() => {
+    axios.post("https://server-app-back-farouk.azurewebsites.net:80/auth", data).then(() => {
       console.log(data);
     })
   };

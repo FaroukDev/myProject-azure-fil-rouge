@@ -12,14 +12,14 @@ function Home() {
   let history = useNavigate();
 
   useEffect(() => {
-    axios.get("http://react-front-webapp-pipeline.azurewebsites.net:80/students").then((response) => {
+    axios.get("https://server-app-back-farouk.azurewebsites.net:80/students").then((response) => {
       setlistOfStudents(response.data);
     });
   }, []);
 
   useEffect(() => {
     axios
-      .get("http://react-front-webapp-pipeline.azurewebsites.net:80/auth/auth", {
+      .get("https://server-app-back-farouk.azurewebsites.net:80/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },

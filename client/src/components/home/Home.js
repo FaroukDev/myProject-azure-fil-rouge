@@ -14,7 +14,7 @@ function Home() {
   useEffect(() => {
     axios
       .get(
-        "http://127.0.0.1:80/students"
+        "http://127.0.0.1:5001/students"
       )
       .then((response) => {
         setlistOfStudents(response.data);
@@ -24,7 +24,7 @@ function Home() {
   useEffect(() => {
     axios
       .get(
-        "http://127.0.0.1:80/auth/auth",
+        "http://127.0.0.1:5001/auth/auth",
         {
           headers: {
             accessToken: localStorage.getItem("accessToken"),

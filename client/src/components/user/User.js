@@ -21,7 +21,7 @@ function User() {
   }, []);
 
   const addComment = () => {
-    axios.post("http://localhost:5001/comments", {
+    axios.post("http://localhost:80/comments", {
       commentBody: newComment,
       StudentId: id,
     },

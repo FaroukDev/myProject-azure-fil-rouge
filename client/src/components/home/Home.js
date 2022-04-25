@@ -15,10 +15,10 @@ function Home() {
       setlistOfStudents(response.data);
     });
   }, []);
-  
 
   useEffect(() => {
-    axios.get("http://localhost:80/auth/auth", {
+    axios
+      .get("http://localhost:80/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },

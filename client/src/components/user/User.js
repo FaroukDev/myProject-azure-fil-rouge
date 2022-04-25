@@ -11,11 +11,11 @@ function User() {
   
 
   useEffect(() => {
-    axios.get(`http://1localhost:5001/byid/${id}`).then((response) => {
+    axios.get(`http://1localhost:80/byid/${id}`).then((response) => {
       setSudentObject(response.data);
     });
 
-    axios.get(`http://localhost:5001/comments/${id}`).then((response) => {
+    axios.get(`http://localhost:80/comments/${id}`).then((response) => {
       setComments(response.data);
     });
   }, []);

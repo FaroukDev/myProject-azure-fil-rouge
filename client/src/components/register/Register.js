@@ -21,7 +21,7 @@ function register() {
   });
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:5001/auth", data).then(() => {
+    axios.post("http://localhost:80/auth", data).then(() => {
       console.log(data);
     })
   };

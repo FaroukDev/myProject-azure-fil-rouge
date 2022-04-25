@@ -11,7 +11,7 @@ function Home() {
   let history = useNavigate();
 
   useEffect(() => {
-    axios.get("https://authentification-app-back-farouk.azurewebsites.net/students/students").then((response) => {
+    axios.get("https://authentification-app-back-farouk.azurewebsites.net/students").then((response) => {
       setlistOfStudents(response.data);
     });
   }, []);

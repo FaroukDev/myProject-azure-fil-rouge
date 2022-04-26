@@ -8,6 +8,9 @@ const cors = require("cors");
 
 app.use(cors());
 
+
+const port = (process.env.PORT || 443);
+
 //Routers
 const postRouter = require("./routes/Students.js");
 app.use("/students", postRouter);
@@ -19,7 +22,7 @@ const usersRouter = require("./routes/Users.js");
 app.use("/auth", usersRouter);
 
 db.sequelize.sync().then(() => {
-  app.listen(5001, () => {
-    console.log("Server running on port 5001");
+  app.listen(port, () => {
+    console.log(`Server running on port 443`);
   });
 });

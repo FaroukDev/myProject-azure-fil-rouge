@@ -17,7 +17,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:80/auth/auth", {
+    axios.get("https://authentification-app-back-farouk.azurewebsites.net/auth/auth", {
         headers: {
           accessToken: localStorage.getItem("accessToken"),
         },

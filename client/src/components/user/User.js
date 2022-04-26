@@ -11,17 +11,17 @@ function User() {
   
 
   useEffect(() => {
-    axios.get(`http://1localhost:80/byid/${id}`).then((response) => {
+    axios.get(`https://authentification-app-back-farouk.azurewebsites.net/byid/${id}`).then((response) => {
       setSudentObject(response.data);
     });
 
-    axios.get(`http://localhost:80/comments/${id}`).then((response) => {
+    axios.get(`https://authentification-app-back-farouk.azurewebsites.net/comments/${id}`).then((response) => {
       setComments(response.data);
     });
   }, []);
 
   const addComment = () => {
-    axios.post("http://localhost:80/comments", {
+    axios.post("https://authentification-app-back-farouk.azurewebsites.net/comments", {
       commentBody: newComment,
       StudentId: id,
     },

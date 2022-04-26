@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import studentRoutes from './routes/student.js';
 
+
 dotenv.config();
 
 
@@ -21,6 +22,8 @@ const CONNECTION_URL = process.env.MONGO_URI;
 
 const PORT = process.env.PORT || 5000;
 
+
+console.log(process.env.CONNECTION_URL);
 
 mongoose.connect(CONNECTION_URL, {
     useNewUrlParser:true, useUnifiedTopology:true

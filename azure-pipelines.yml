@@ -7,7 +7,7 @@ variables:
   uiBuild : $(uiSource)/build
 
 trigger:
-- dev
+- server
 
 pool:
   vmImage: ubuntu-latest

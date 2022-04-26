@@ -18,7 +18,7 @@ export default function CreateStudent() {
   });
 
   const createStudent = () => {
-    axios.post("http://localhost:5000/students", student).then(() => {
+    axios.post("https://server-app-back-farouk.azurewebsites.net/students", student).then(() => {
       window.location.reload(false);
     });
   };

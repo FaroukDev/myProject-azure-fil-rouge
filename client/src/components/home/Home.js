@@ -11,17 +11,25 @@ function Home() {
   let history = useNavigate();
 
   useEffect(() => {
-    axios.get("https://authentification-app-back-farouk.azurewebsites.net/students").then((response) => {
-      setlistOfStudents(response.data);
-    });
+    axios
+      .get(
+        "https://authentification-app-back-farouk.azurewebsites.net/students"
+      )
+      .then((response) => {
+        setlistOfStudents(response.data);
+      });
   }, []);
 
   useEffect(() => {
-    axios.get("https://authentification-app-back-farouk.azurewebsites.net/auth/auth", {
-        headers: {
-          accessToken: localStorage.getItem("accessToken"),
-        },
-      })
+    axios
+      .get(
+        "https://authentification-app-back-farouk.azurewebsites.net/auth/auth",
+        {
+          headers: {
+            accessToken: localStorage.getItem("accessToken"),
+          },
+        }
+      )
       .then((response) => {
         if (response.data.error) {
           setAuthState(false);

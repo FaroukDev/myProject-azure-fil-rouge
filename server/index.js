@@ -20,7 +20,7 @@ app.use('/students', studentRoutes);
 
 const CONNECTION_URL = process.env.MONGO_URI;
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 443;
 
 
 console.log(process.env.CONNECTION_URL);

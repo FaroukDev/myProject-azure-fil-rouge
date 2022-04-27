@@ -11,7 +11,7 @@ function User() {
   
 
   useEffect(() => {
-    axios.get(`https://authentification-app-back-farouk.azurewebsites.net/byid/${id}`).then((response) => {
+    axios.get(`https://authentification-app-back-farouk.azurewebsites.net/students/byid/${id}`).then((response) => {
       setSudentObject(response.data);
     });
 

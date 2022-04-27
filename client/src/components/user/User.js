@@ -7,43 +7,57 @@ function User() {
   let { id } = useParams();
   const [studentObject, setSudentObject] = useState({});
   const [comments, setComments] = useState([]);
-  const [newComment, setNewComment ] = useState("");
-  
+  const [newComment, setNewComment] = useState("");
 
   useEffect(() => {
-    axios.get(`https://authentification-app-back-farouk.azurewebsites.net/students/byid/${id}`).then((response) => {
-      setSudentObject(response.data);
-    });
+    axios
+      .get(
+        `https://authentification-app-back-farouk.azurewebsites.net/students/byid/${id}`
+      )
+      .then((response) => {
+        setSudentObject(response.data);
+      });
 
-    axios.get(`https://authentification-app-back-farouk.azurewebsites.net/comments/${id}`).then((response) => {
-      setComments(response.data);
-    });
+    axios
+      .get(
+        `https://authentification-app-back-farouk.azurewebsites.net/comments/${id}`
+      )
+      .then((response) => {
+        setComments(response.data);
+      });
   }, []);
 
   const addComment = () => {
-    axios.post("https://authentification-app-back-farouk.azurewebsites.net/comments", {
-      commentBody: newComment,
-      StudentId: id,
-    },
-    {
-      headers: {
-        accessToken: localStorage.getItem("accessToken")
-      },
-    }
-    )
+    axios
+      .post(
+        "https://authentification-app-back-farouk.azurewebsites.net/comments",
+        {
+          commentBody: newComment,
+          StudentId: id,
+        },
+        {
+          headers: {
+            accessToken: localStorage.getItem("accessToken"),
+          },
+        }
+      )
       .then((response) => {
-      if(response.data.error) {
-        console.log(response.data.error);
-      } else {
-        const commentToAdd = {commentBody: newComment, username: response.data.username}
-      setComments([...comments, commentToAdd])
-      setNewComment("");
-      }{}
-      
-    })
-  }
+        if (response.data.error) {
+          console.log(response.data.error);
+        } else {
+          const commentToAdd = {
+            commentBody: newComment,
+            username: response.data.username,
+          };
+          setComments([...comments, commentToAdd]);
+          setNewComment("");
+        }
+        {
+        }
+      });
+  };
   return (
-    <div >
+    <div>
       <nav>
         <h4>Welcome to the Page of {studentObject.name} !</h4>
         <ul>
@@ -86,15 +100,20 @@ function User() {
               placeholder="Comment..."
               autoComplete="off"
               value={newComment}
-              onChange={(event) => {setNewComment(event.target.value)}}
+              onChange={(event) => {
+                setNewComment(event.target.value);
+              }}
             />
-            <button className="btn btn-primary" onClick={addComment}>Add Comment</button>
+            <button className="btn btn-primary" onClick={addComment}>
+              Add Comment
+            </button>
             <div className="listOfComments">
               <h4>My comments</h4>
               {comments.map((comment, key) => {
                 return (
                   <div key={key} className="comment-post">
-                    {comment.commentBody}<hr/>
+                    {comment.commentBody}
+                    <hr />
                     {/* <label>Username : {comment.username}</label> */}
                   </div>
                 );

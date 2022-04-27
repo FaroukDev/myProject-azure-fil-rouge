@@ -1,35 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from 'yup';
+import * as Yup from "yup";
 import axios from "axios";
 import "../../assets/styles/createPost.css";
 
-
 function CreatePost() {
-
   let history = useNavigate();
 
   const initialValues = {
-      name: "",
-      description: "",
-      grade: "",
+    name: "",
+    description: "",
+    grade: "",
   };
 
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("You must input a name"),
     description: Yup.string().required(),
     grade: Yup.string().required(),
-  })
-  
+  });
 
   const onSubmit = (data) => {
-    axios.post("https://authentification-app-back-farouk.azurewebsites.net/students", data).then((response) => {
-      history("/");
-    });
-  }
+    axios
+      .post(
+        "https://authentification-app-back-farouk.azurewebsites.net/students",
+        data
+      )
+      .then((response) => {
+        history("/");
+      });
+  };
 
-  
   return (
     <div>
       <div>
@@ -46,21 +47,22 @@ function CreatePost() {
       </div>
 
       <div className="createPostPage">
-        <Formik 
-          initialValues={initialValues} 
-          onSubmit={onSubmit} 
+        <Formik
+          initialValues={initialValues}
+          onSubmit={onSubmit}
           validationSchema={validationSchema}
-          >
+        >
           <Form className="formContainer">
             <label>Name</label>
-            <ErrorMessage name="name" component={"span"}/>
+            <ErrorMessage name="name" component={"span"} />
             <Field
               autoComplete="off"
-              id="name" 
-              name="name" 
-              placeholder="Ex. John.." />
+              id="name"
+              name="name"
+              placeholder="Ex. John.."
+            />
             <label>Description</label>
-            <ErrorMessage name="description" component={"span"}/>
+            <ErrorMessage name="description" component={"span"} />
             <Field
               autoComplete="off"
               id="description"
@@ -68,7 +70,7 @@ function CreatePost() {
               placeholder="your description"
             />
             <label>Grade</label>
-            <ErrorMessage name="grade" component={"span"}/>
+            <ErrorMessage name="grade" component={"span"} />
             <Field
               autoComplete="off"
               id="grade"

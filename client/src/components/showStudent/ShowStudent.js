@@ -18,13 +18,13 @@ export default function ShowStudent() {
   const [studentsList, setStudenList] = useState([]);
 
   const deleteStudent = (id) => {
-    axios.delete(`http://localhost:5000/students/${id}`).then(() => {
+    axios.delete(`https://server-app-back-farouk.azurewebsites.net/students/${id}`).then(() => {
       window.location.reload(false);
     });
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/students").then((allStudents) => {
+    axios.get("https://server-app-back-farouk.azurewebsites.net/students").then((allStudents) => {
       setStudenList(allStudents.data);
     });
   }, []);

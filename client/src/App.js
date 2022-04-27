@@ -17,7 +17,7 @@ function App() {
   const [authState, setAuthState] = useState(false);
 
   useEffect(() => {
-    axios.get("https://server-app-back-farouk.azurewebsites.net:80/auth/auth",{
+    axios.get("https://authentification-app-back-farouk.azurewebsites.net/auth/auth",{
       headers: {
         accessToken: localStorage.getItem("accessToken")
       }

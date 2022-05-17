@@ -25,7 +25,7 @@ steps:
   displayName: 'npm install'
   
 - script: |
-    npm test
+    cd $(uiSource) && npm test
 #    npm run build
   displayName: 'Running test'
 - task: ArchiveFiles@2

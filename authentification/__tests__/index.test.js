@@ -1,9 +1,9 @@
 const request = require("supertest");
 const express = require("express");
 const router = require("../routes/Students.js");
-const config = require("../config/config.json");
+const models = require("../models");
 
-// afterAll(() => config.sequelize.close());
+afterAll(() => models.sequelize.close());
 
 const app = new express();
 

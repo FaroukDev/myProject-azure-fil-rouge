@@ -24,10 +24,10 @@ steps:
 #    npm run build
   displayName: 'npm install'
   
-- script: |
-    cd $(uiSource) && npm test
+#- script: |
+#   cd $(uiSource) && npm test
 #    npm run build
-  displayName: 'Running test'
+# displayName: 'Running test'
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(uiSource)'

@@ -6,6 +6,7 @@ app.use(express.json());
 const db = require("./models/index.js");
 const cors = require("cors");
 
+
 app.use(cors());
 
 const port = process.env.PORT || 5001;

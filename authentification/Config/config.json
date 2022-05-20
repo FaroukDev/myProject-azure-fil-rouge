@@ -8,12 +8,13 @@
     "port": "3306"
   },
   "test": {
-    "username": "root",
-    "password": "Delpiero92!",
-    "database": "studentDashboard",
+    "username": "azure",
+    "password": "6#vWHD_$",
+    "database": "localdb",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": "3306"
+    "port": "50038"
+    
   },
   "production": {
     "username": "azure",

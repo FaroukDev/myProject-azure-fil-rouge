@@ -2,6 +2,7 @@ const request = require("supertest");
 const express = require("express");
 const router = require("../routes/Students.js");
 const models = require("../models/index.js");
+const db = require("../models/index.js");
 
 afterAll(() => models.sequelize.close());
 
@@ -9,11 +10,11 @@ const app = new express();
 
 app.use("/", router);
 
-// db.sequelize.sync().then(() => {
-//   app.listen(port, () => {
-//     console.log(`Server running on port 443`);
-//   });
-// });
+db.sequelize.sync().then(() => {
+  app.listen(port, () => {
+    console.log(`Server running on port 443`);
+  });
+});
 
 describe("list of students", function () {
   test("responds to / ", async () => {

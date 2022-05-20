@@ -3,7 +3,6 @@ const express = require("express");
 const router = require("../routes/Students.js");
 const models = require("../models/index.js");
 
-
 afterAll(() => models.sequelize.close());
 
 const app = new express();
@@ -15,7 +14,6 @@ app.use("/", router);
 //     console.log(`Server running on port 443`);
 //   });
 // });
-
 
 describe("list of students", function () {
   test("responds to / ", async () => {

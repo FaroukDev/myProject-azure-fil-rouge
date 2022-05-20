@@ -17,7 +17,6 @@ router.get("/byid/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   const post = req.body;
   await db.Students.create(post);
-
   res.json(post);
   res.sendStatus(200);
 });

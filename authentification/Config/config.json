@@ -11,7 +11,7 @@
     "username": "azure",
     "password": "6#vWHD_$",
     "database": "localdb",
-    "host": "localdb:50038",
+    "host": "127.0.0.1",
     "dialect": "mysql",
     "port": "50038"
     
@@ -20,7 +20,7 @@
     "username": "azure",
     "password": "6#vWHD_$",
     "database": "localdb",
-    "host": "localdb:50038",
+    "host": "127.0.0.1",
     "dialect": "mysql",
     "port": "50038"
   }

@@ -10,7 +10,7 @@ app.use(cors());
 
 const port = process.env.PORT || 5001;
 
-//routes
+
 const postRouter = require("./routes/Students.js");
 app.use("/students", postRouter);
 

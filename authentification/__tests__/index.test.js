@@ -4,7 +4,6 @@ const router = require("../routes/Students.js");
 const models = require("../models/index.js");
 
 
-
 const app = new express();
 
 app.use("/", router);
@@ -34,4 +33,6 @@ describe("list of students", function () {
   
 });
 
-afterAll(() => models.sequelize.close());
+afterAll( async () => {
+  await models.sequelize.close();
+})

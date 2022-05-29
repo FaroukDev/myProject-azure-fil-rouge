@@ -13,6 +13,9 @@
     "database": "localdb",
     "host": "127.0.0.1",
     "dialect": "mssql",
+    "dialectOptions": {
+      "encrypt": true
+    },
     "port": "50038"
   },
   "production": {
@@ -21,6 +24,9 @@
     "database": "localdb",
     "host": "127.0.0.1",
     "dialect": "mssql",
+    "dialectOptions": {
+      "encrypt": true
+    },
     "port": "50038"
   }
 }

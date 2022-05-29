@@ -11,7 +11,7 @@
     "username": "azure",
     "password": "6#vWHD_$",
     "database": "localdb",
-    "host": "authentification-app-back-farouk.azurewebsites.net",
+    "host": "https://authentification-app-back-farouk.scm.azurewebsites.net/phpMyAdmin/prefs_manage.php?token=828ac8770aeca9325e4875824dd0cffd",
     "dialect": "mysql",
     "port": "50038"
   },
@@ -19,7 +19,7 @@
     "username": "azure",
     "password": "6#vWHD_$",
     "database": "localdb",
-    "host": "authentification-app-back-farouk.azurewebsites.net",
+    "host": "https://authentification-app-back-farouk.scm.azurewebsites.net/phpMyAdmin/prefs_manage.php?token=828ac8770aeca9325e4875824dd0cffd",
     "dialect": "mysql",
     "port": "50038"
   }

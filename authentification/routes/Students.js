@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
   const listOfStudents = await db.Students.findAll();
   res.json(listOfStudents);
 });
-//routes
+
 router.get("/byid/:id", async (req, res) => {
   const id = req.params.id;
   const post = await db.Students.findByPk(id);

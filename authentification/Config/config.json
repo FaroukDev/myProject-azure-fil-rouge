@@ -12,10 +12,7 @@
     "password": "6#vWHD_$",
     "database": "localdb",
     "host": "127.0.0.1",
-    "dialect": "mssql",
-    "dialectOptions": {
-      "encrypt": true
-    },
+    "dialect": "mysql",
     "port": "50038"
   },
   "production": {
@@ -23,10 +20,7 @@
     "password": "6#vWHD_$",
     "database": "localdb",
     "host": "127.0.0.1",
-    "dialect": "mssql",
-    "dialectOptions": {
-      "encrypt": true
-    },
+    "dialect": "mysql",
     "port": "50038"
   }
 }

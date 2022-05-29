@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
   res.json(listOfStudents);
 });
 
-
+//routes
 router.get("/byid/:id", async (req, res) => {
   const id = req.params.id;
   const post = await db.Students.findByPk(id);

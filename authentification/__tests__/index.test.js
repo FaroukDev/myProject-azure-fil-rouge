@@ -8,7 +8,6 @@ const app = new express();
 
 app.use("/", router);
 
-jest.useFakeTimers('legacy')
 
 describe("list of students", function () {
   test("responds to / ", async () => {

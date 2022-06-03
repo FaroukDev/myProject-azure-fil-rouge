@@ -32,7 +32,7 @@ describe("list of students", function () {
     expect(actual).toMatchObject(expected);
   });
   
-});
+}, 30000);
 
 afterAll( async () => {
   await models.sequelize.close();

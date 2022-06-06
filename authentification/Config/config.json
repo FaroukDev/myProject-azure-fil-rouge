@@ -13,7 +13,13 @@
     "database": "localdb",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": "50038"
+    "port": "50038",
+    "ssl": true,
+    "dialectOptions": {
+       "ssl": {
+          "require": true
+       }
+     }
   },
   "production": {
     "username": "azure",
@@ -21,6 +27,12 @@
     "database": "localdb",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": "50038"
+    "port": "50038",
+    "ssl": true,
+    "dialectOptions": {
+       "ssl": {
+          "require": true
+       }
+     }
   }
 }

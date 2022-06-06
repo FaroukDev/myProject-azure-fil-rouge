@@ -13,7 +13,7 @@ router.get("/byid/:id", async (req, res) => {
   const post = await db.Students.findByPk(id);
   res.json(post);
 });
-//route
+
 router.post("/", async (req, res) => {
   const post = req.body;
   await db.Students.create(post);

@@ -20,8 +20,7 @@ steps:
 
 - script: |
     cd client && npm --version
-    npm install
-    npm run build
+    npm install && npm run build
   displayName: 'npm install and build'
 
 - task: ArchiveFiles@2

@@ -8,7 +8,7 @@ const app = new express();
 
 app.use("/", router);
 
-jest.setTimeout(newTimeout)
+jest.setTimeout(30000)
 
 describe("list of students", function () {
   test("responds to / ", async () => {

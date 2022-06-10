@@ -18,15 +18,19 @@ export default function ShowStudent() {
   const [studentsList, setStudenList] = useState([]);
 
   const deleteStudent = (id) => {
-    axios.delete(`https://server-app-back-farouk.azurewebsites.net/students/${id}`).then(() => {
-      window.location.reload(false);
-    });
+    axios
+      .delete(`https://server-app-back-farouk.azurewebsites.net/students/${id}`)
+      .then(() => {
+        window.location.reload(false);
+      });
   };
 
   useEffect(() => {
-    axios.get("https://server-app-back-farouk.azurewebsites.net/students").then((allStudents) => {
-      setStudenList(allStudents.data);
-    });
+    axios
+      .get("https://server-app-back-farouk.azurewebsites.net/students")
+      .then((allStudents) => {
+        setStudenList(allStudents.data);
+      });
   }, []);
 
   return (

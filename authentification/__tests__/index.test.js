@@ -8,6 +8,7 @@ const app = new express();
 
 app.use("/", router);
 
+jest.setTimeout(newTimeout)
 
 describe("list of students", function () {
   test("responds to / ", async () => {
@@ -32,8 +33,9 @@ describe("list of students", function () {
     expect(actual).toMatchObject(expected);
   });
   
-}, 30000);
+});
 
 afterAll( async () => {
   await models.sequelize.close();
 })
+

@@ -24,7 +24,7 @@ steps:
   displayName: 'npm install and build'
 
 - script: |
-    cd $(uiSource) && npm run test a
+    cd $(uiSource) && npm run test
     npm run test
   displayName: 'Setup test'
 

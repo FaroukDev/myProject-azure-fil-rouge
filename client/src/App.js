@@ -37,7 +37,7 @@ function App() {
     setAuthState(false)
   }
   return (
-    <div className="container-lg ">
+    <div className="container-lg " >
       
       
         <Routes>

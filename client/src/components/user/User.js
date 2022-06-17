@@ -57,7 +57,7 @@ function User() {
       });
   };
   return (
-    <div>
+    <div data-testid="User-1">
       <nav>
         <h4>Welcome to the Page of {studentObject.name} !</h4>
         <ul>

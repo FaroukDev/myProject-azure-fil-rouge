@@ -52,6 +52,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "jest": "^28.1.1",
     "webpack": "^5.70.0"
   }
 }

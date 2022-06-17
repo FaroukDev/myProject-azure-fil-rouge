@@ -24,17 +24,11 @@ steps:
   displayName: 'npm install and build'
 
 - script: |
-    cd $(uiSource) && npm run test
+    cd $(uiSource) && npm run test a
     npm run test
   displayName: 'Setup test'
 
-- script: |
-    cd $(uiSource) && a
-  displayName: 'Running all test'
 
-- script: |
-    cd $(uiSource) && q
-  displayName: 'Quit test'
 
 - task: ArchiveFiles@2
   inputs:

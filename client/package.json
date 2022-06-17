@@ -37,7 +37,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build-localhost": "PUBLIC_URL=/ react-scripts build",
-    "test": "react-scripts test",
+    "test": "npm run test a",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

@@ -23,6 +23,10 @@ steps:
     npm install && npm run build
   displayName: 'npm install and build'
 
+- script: |
+    cd $(uiSource) && npm run test
+    npm run test
+  displayName: 'Running test'
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(uiBuild)'

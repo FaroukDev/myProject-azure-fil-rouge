@@ -7,7 +7,6 @@ import studentRoutes from './routes/student.js';
 
 dotenv.config();
 
-
 const app = express();
 
 app.use(cors());
@@ -17,11 +16,9 @@ app.use(express.urlencoded({limit: "20mb", extented:true}));
 
 app.use('/students', studentRoutes);
 
-
 const CONNECTION_URL = process.env.MONGO_URI;
 
 const PORT = process.env.PORT || 443;
-
 
 console.log(process.env.CONNECTION_URL);
 

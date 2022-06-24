@@ -99,6 +99,7 @@ function User() {
               type="text"
               placeholder="Comment..."
               autoComplete="off"
+              data-testid="comment"
               value={newComment}
               onChange={(event) => {
                 setNewComment(event.target.value);

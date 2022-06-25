@@ -5,6 +5,12 @@ import { act } from "react-dom/test-utils";
 import User from "../user/User.js";
 import { BrowserRouter as Router } from "react-router-dom";
 
+
+beforeEach(() => {
+    jest.spyOn(console, 'warn').mockImplementation(() => {});
+  });
+
+
 // test component  user
 
 test("should render User component", () => {
@@ -26,3 +32,4 @@ describe("User Component", () => {
     </Router>;
   });
 });
+

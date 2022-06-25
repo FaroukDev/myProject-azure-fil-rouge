@@ -3,6 +3,7 @@ const app = express();
 const Students = require("./routes/Students.js");
 app.use(express.json());
 
+// connection db
 const db = require("./models/index.js");
 const cors = require("cors");
 

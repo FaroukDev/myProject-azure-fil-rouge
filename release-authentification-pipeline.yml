@@ -1,0 +1,40 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+variables:
+  uiSource : 'authentification'
+  uiBuild : $(uiSource)/build
+
+trigger:
+- dev
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '17.5.0'
+  displayName: 'Install Node.js'
+
+- script: |
+    cd $(uiSource) && npm install
+#    npm run build
+  displayName: 'npm install'
+  
+#- script: |
+#    cd $(uiSource) && npm run test
+#    npm run test
+#  displayName: 'Running test'
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(uiSource)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(uiSource)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+- task: PublishBuildArtifacts@1
+  inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(uiSource)'

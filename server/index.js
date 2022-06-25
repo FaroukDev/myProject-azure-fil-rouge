@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 443;
 
 console.log(process.env.CONNECTION_URL);
 
-//mongoose connection
+//mongoose connection string 
 
 mongoose
   .connect(CONNECTION_URL, {

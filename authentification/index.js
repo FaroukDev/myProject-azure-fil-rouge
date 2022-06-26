@@ -4,14 +4,13 @@ const app = express();
 const Students = require("./routes/Students.js");
 app.use(express.json());
 
-// connection db avec cors
+
 const db = require("./models/index.js");
 const cors = require("cors");
 
 app.use(cors());
 
 const port = process.env.PORT || 5001;
-
 
 const postRouter = require("./routes/Students.js");
 app.use("/students", postRouter);

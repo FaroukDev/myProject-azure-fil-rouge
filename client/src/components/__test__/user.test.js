@@ -11,8 +11,6 @@ beforeEach(() => {
   });
 
 
-// test component  user
-
 test("should render User component", () => {
   render(<User />, { wrapper: MemoryRouter });
   const UserElement = screen.getByTestId("User-1");

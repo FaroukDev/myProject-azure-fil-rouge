@@ -10,7 +10,7 @@ beforeEach(() => {
     jest.spyOn(console, 'warn').mockImplementation(() => {});
   });
 
-
+// test component
 test("should render User component", () => {
   render(<User />, { wrapper: MemoryRouter });
   const UserElement = screen.getByTestId("User-1");
